@@ -38,9 +38,12 @@
 
 ## 一、安装
 
-1. 下载 `SubtitleLookup-v1.1.1-macos-arm64.zip`，解压得到 `SubtitleLookup.app`。
+1. 到 **[Releases](https://github.com/007zhaoxian/subtitle-lookup/releases/latest)**
+   下载 `SubtitleLookup-v1.2.3-macos-arm64.zip`，解压得到 `SubtitleLookup.app`。
 2. 拖进 **`/Applications`**（建议改名为「看剧查词-美剧」以便区分）。
 3. 双击打开。
+
+> 想从源码跑 / 自己打包，看 [开发文档](docs/DEVELOPMENT.md)。
 
 > ⚠️ 一定要放进 `/Applications`。macOS 的权限是按「App 路径」记的，
 > 放在下载文件夹或桌面上会导致授权反复失效。
@@ -339,7 +342,8 @@ App 体积也从 225M 降到 92M。）
 
 架构说明、模块职责、线程模型、状态机、打包签名流程见
 **[docs/DEVELOPMENT.md](docs/DEVELOPMENT.md)**；
-开发过程中踩过的坑见 **[docs/NOTES.md](docs/NOTES.md)**。
+开发过程中踩过的坑见 **[docs/NOTES.md](docs/NOTES.md)**；
+发新版本怎么发、哪些东西不许提交，见 **[docs/RELEASE.md](docs/RELEASE.md)**。
 
 ```bash
 # 跑全部测试（离线，不花钱；测试自带临时设置目录，不动你的真实配置）
