@@ -1,0 +1,21 @@
+# 运行时依赖（Python 3.10 ~ 3.13，打包用 3.13）
+#
+# ★ v1.2.2：**playwright 已从依赖里删除** —— 网页版豆包（无头 Chrome +
+#   扫码登录 + 抓页面回答）整体去掉了，查词只剩直连大模型 API 一条通道。
+#   这是个纯 HTTP 请求，用标准库 urllib 发的（见 api_client.py），
+#   所以连 requests 都不需要。
+PyQt6>=6.6.0                    # 菜单栏（QSystemTrayIcon）+ 悬浮窗 + 提示窗
+pynput>=1.7.7                   # 全局按键监听（空格）
+mss>=9.0.1                      # 全屏截图（回退：系统 screencapture）
+Pillow>=10.0.0                  # 截图等比缩放
+pyobjc-framework-Cocoa>=10.0    # 毛玻璃 NSVisualEffectView + 权限检测 + Dock 图标切换
+
+# 备选：rumps 菜单栏。
+# ⚠️ 注意：macOS 强制要求 QApplication 在主线程创建，而 rumps 也占主线程，
+#    两者无法共存（实测会抛 NSException 崩溃）。默认后端是 Qt 自带的
+#    QSystemTrayIcon，所以这个包**不是必需的**，只在你想改造成
+#    「rumps 菜单栏 + pyobjc 原生悬浮窗」时才装。
+# rumps>=0.4.0
+
+# 打包依赖（仅开发机需要）
+pyinstaller>=6.6.0
